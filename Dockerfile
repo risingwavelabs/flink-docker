@@ -12,5 +12,14 @@ RUN wget https://github.com/nexmark/nexmark/releases/latest/download/nexmark-fli
     rm -rf nexmark-flink.tgz nexmark-flink
 
 # Download csv file for nexmark q13
-RUN wget -P /opt/flink https://ci-deps-dist.s3.amazonaws.com/side-input.csv && \
-    chown -R flink: /opt/flink/side-input.csv
+RUN wget -P /opt/flink https://ci-deps-dist.s3.amazonaws.com/side-input-10K.csv && \
+    chown -R flink: /opt/flink/side-input-10K.csv
+
+RUN wget -P /opt/flink https://ci-deps-dist.s3.amazonaws.com/side-input-100K.csv && \
+    chown -R flink: /opt/flink/side-input-100K.csv
+
+RUN wget -P /opt/flink https://ci-deps-dist.s3.amazonaws.com/side-input-1M.csv && \
+    chown -R flink: /opt/flink/side-input-1M.csv
+
+RUN wget -P /opt/flink https://ci-deps-dist.s3.amazonaws.com/side-input-10M.csv && \
+    chown -R flink: /opt/flink/side-input-10M.csv
